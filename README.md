@@ -65,42 +65,39 @@
 
 **12. What is the purpose of the PxSEL0 and PxSEL1 GPIO registers? Write two statements that select the GPIO function for the pins P1.0 and P1.7.**
     PxSEL0 and PxSEL1 GPIO registers are used to select the function of the pin being configured.
-        P1SEL0 &= ~((1<<0) | (1<<7));
-        P1SEL1 &= ~((1<<0) | (1<<7));
+            P1SEL0 &= ~((1<<0) | (1<<7));
+            P1SEL1 &= ~((1<<0) | (1<<7));
 
 **13. Write a void function named P1_1_and_P1_4_Init that configures P1.1 and P1.4 as GPIO inputs with pull-up resistors enabled.**
-    void P1_1_and_P1_4_Init(void)
-    {
-        P1SEL0 &= ~((1<<1) | (1<<4));
-        P1SEL1 &= ~((1<<1) | (1<<4));
-        P1DIR &= ~((1<<1) | (1<<4));
-        P1REN |= (1<<1) | (1<<4);
-        P1OUT |= (1<<1) | (1<<4);
-    }
+        void P1_1_and_P1_4_Init(void)
+        {
+            P1SEL0 &= ~((1<<1) | (1<<4));
+            P1SEL1 &= ~((1<<1) | (1<<4));
+            P1DIR &= ~((1<<1) | (1<<4));
+            P1REN |= (1<<1) | (1<<4);
+            P1OUT |= (1<<1) | (1<<4);
+        }
 
 **14. Write a void function named Buttons_Init that configures the following pins as GPIO inputs with pull-down resistors enabled. P3.1, P3.6, P5.0, P5.4.**
-    void Buttons_Init(void)
-    {
-        P3SEL0 &= ~((1<<1) | (1<<6));
-        P3SEL1 &= ~((1<<1) | (1<<6));
-        P5SEL0 &= ~((1<<0) | (1<<4));
-        P5SEL1 &= ~((1<<0) | (1<<4));
-        P3DIR &= ~((1<<1) | (1<<6));
-        P5DIR &= ~((1<<0) | (1<<4));
-        P3REN |= (1<<1) | (1<<6);
-        P5REN |= (1<<0) | (1<<4);
-        P3OUT &= ~((1<<1) | (1<<6));
-        P5OUT &= ~((1<<0) | (1<<4));
-    }
+        void Buttons_Init(void)
+        {
+            P3SEL0 &= ~((1<<1) | (1<<6));
+            P3SEL1 &= ~((1<<1) | (1<<6));
+            P5SEL0 &= ~((1<<0) | (1<<4));
+            P5SEL1 &= ~((1<<0) | (1<<4));
+            P3DIR &= ~((1<<1) | (1<<6));
+            P5DIR &= ~((1<<0) | (1<<4));
+            P3REN |= (1<<1) | (1<<6);
+            P5REN |= (1<<0) | (1<<4);
+            P3OUT &= ~((1<<1) | (1<<6));
+            P5OUT &= ~((1<<0) | (1<<4));
+        }
 
 **15. Write a void function named LEDs_Init that configures the following pins as GPIO outputs. Initialize the pins to zero. P7.0 to P7.7.**
-    void LEDs_Init(void)
-    {
-        P7SEL0 = 0x00;
-        P7SEL1 = 0x00;
-        P7DIR = 0xFF;
-        P7OUT = 0x00;
-    }
-
-## Section II: Programming Assignments
-## Integer Sign & Magnitude
+        void LEDs_Init(void)
+        {
+            P7SEL0 = 0x00;
+            P7SEL1 = 0x00;
+            P7DIR = 0xFF;
+            P7OUT = 0x00;
+        }
