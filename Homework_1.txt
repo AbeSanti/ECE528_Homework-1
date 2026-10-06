@@ -1,3 +1,0 @@
-# ECE528_Homework-1
-## Section I: Review Questions
-**1.(a) What is the difference between a compiler and an interpreter?**
